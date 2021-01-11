@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.17)
+project(SemanticRoleLabeling)
+
+set(CMAKE_CXX_STANDARD 17)
+
+include_directories(include)
+link_directories(library)
+
+add_library(SemanticRoleLabeling AutoProcessor/ParseTree/Propbank/AutoArgument.cpp AutoProcessor/ParseTree/Propbank/AutoArgument.h AutoProcessor/ParseTree/Propbank/TurkishAutoArgument.cpp AutoProcessor/ParseTree/Propbank/TurkishAutoArgument.h AutoProcessor/Sentence/Propbank/SentenceAutoArgument.h AutoProcessor/Sentence/Propbank/TurkishSentenceAutoArgument.cpp AutoProcessor/Sentence/Propbank/TurkishSentenceAutoArgument.h AutoProcessor/Sentence/Propbank/SentenceAutoPredicate.cpp AutoProcessor/Sentence/Propbank/SentenceAutoPredicate.h AutoProcessor/Sentence/Propbank/TurkishSentenceAutoPredicate.cpp AutoProcessor/Sentence/Propbank/TurkishSentenceAutoPredicate.h AutoProcessor/Sentence/FrameNet/SentenceAutoFramePredicate.cpp AutoProcessor/Sentence/FrameNet/SentenceAutoFramePredicate.h AutoProcessor/Sentence/FrameNet/TurkishSentenceAutoFramePredicate.h AutoProcessor/Sentence/FrameNet/TurkishSentenceAutoFramePredicate.cpp)
+
+target_link_libraries(SemanticRoleLabeling AnnotatedTree AnnotatedSentence)
