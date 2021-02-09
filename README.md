@@ -91,7 +91,8 @@ Afterwards, one has to annotate the arguments for each predicate. We use autoArg
 	TurkishSentenceAutoArgument turkishAutoArgument;
 	turkishAutoArgument.autoArgument(sentence);
 
-# Cite
+
+# Cite
 
 	@article{tbtkelektrik400987,
 	journal = {Turkish Journal of Electrical Engineering and Computer Science},
