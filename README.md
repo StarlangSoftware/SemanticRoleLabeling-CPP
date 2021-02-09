@@ -90,3 +90,20 @@ Afterwards, one has to annotate the arguments for each predicate. We use autoArg
 
 	TurkishSentenceAutoArgument turkishAutoArgument;
 	turkishAutoArgument.autoArgument(sentence);
+
+# Cite
+
+	@article{tbtkelektrik400987,
+	journal = {Turkish Journal of Electrical Engineering and Computer Science},
+	issn = {1300-0632},
+	eissn = {1303-6203},
+	address = {},
+	publisher = {TÜBİTAK},
+	year = {2018},
+	volume = {26},
+	pages = {570 - 581},
+	doi = {},
+	title = {Construction of a Turkish proposition bank},
+	key = {cite},
+	author = {Ak,  Koray and Toprak,  Cansu and Esgel,  Volkan and Yıldız,  Olcay Taner}
+	}
