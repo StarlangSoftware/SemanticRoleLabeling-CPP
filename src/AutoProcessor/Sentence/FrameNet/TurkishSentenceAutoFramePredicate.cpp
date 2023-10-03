@@ -5,7 +5,7 @@
 #include "TurkishSentenceAutoFramePredicate.h"
 
 /**
- * Constructor for {@link TurkishSentenceAutoPredicate}. Gets the FrameSets as input from the user, and sets
+ * Constructor for TurkishSentenceAutoPredicate. Gets the FrameSets as input from the user, and sets
  * the corresponding attribute.
  * @param framesetList FramesetList containing the Turkish propbank frames.
  */
