@@ -4,10 +4,19 @@
 
 #include "TurkishAutoArgument.h"
 
+/**
+ * Sets the language.
+ */
 TurkishAutoArgument::TurkishAutoArgument() : AutoArgument(ViewLayerType::TURKISH_WORD){
-
 }
 
+/**
+ * Checks all ancestors of the current parse node, until an ancestor has a tag of given name, or the ancestor is
+ * null. Returns the ancestor with the given tag, or null.
+ * @param parseNode Parse node to start checking ancestors.
+ * @param name Tag to check.
+ * @return The ancestor of the given parse node with the given tag, if such ancestor does not exist, returns null.
+ */
 bool TurkishAutoArgument::checkAncestors(ParseNode* parseNode, const string &name) {
     while (parseNode != nullptr){
         if (parseNode->getData().getName() == name){
@@ -18,6 +27,14 @@ bool TurkishAutoArgument::checkAncestors(ParseNode* parseNode, const string &nam
     return false;
 }
 
+/**
+ * Checks all ancestors of the current parse node, until an ancestor has a tag with the given, or the ancestor is
+ * null. Returns the ancestor with the tag having the given suffix, or null.
+ * @param parseNode Parse node to start checking ancestors.
+ * @param suffix Suffix of the tag to check.
+ * @return The ancestor of the given parse node with the tag having the given suffix, if such ancestor does not
+ * exist, returns null.
+ */
 bool TurkishAutoArgument::checkAncestorsUntil(ParseNode* parseNode, const string &suffix) {
     while (parseNode != nullptr){
         if (parseNode->getData().getName().find("-" + suffix) != string::npos){
@@ -28,6 +45,13 @@ bool TurkishAutoArgument::checkAncestorsUntil(ParseNode* parseNode, const string
     return false;
 }
 
+/**
+ * The method tries to set the argument of the given parse node to the given argument type automatically. If the
+ * argument type condition matches the parse node, it returns true, otherwise it returns false.
+ * @param parseNode Parse node to check for semantic role.
+ * @param argumentType Semantic role to check.
+ * @return True, if the argument type condition matches the parse node, false otherwise.
+ */
 bool TurkishAutoArgument::autoDetectArgument(ParseNodeDrawable *parseNode, ArgumentType argumentType) {
     ParseNode* parent = parseNode->getParent();
     switch (argumentType){
