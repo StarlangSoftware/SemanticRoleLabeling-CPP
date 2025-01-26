@@ -22,7 +22,7 @@ TurkishSentenceAutoPredicate::TurkishSentenceAutoPredicate(FramesetList &xmlPars
 bool TurkishSentenceAutoPredicate::autoPredicate(AnnotatedSentence *sentence) {
     vector<AnnotatedWord*> candidateList = sentence->predicateCandidates(xmlParser);
     for (AnnotatedWord* word : candidateList){
-        word->setArgument("PREDICATE$" + word->getSemantic());
+        word->setArgumentList("PREDICATE$" + word->getSemantic());
     }
     if (!candidateList.empty()){
         return true;

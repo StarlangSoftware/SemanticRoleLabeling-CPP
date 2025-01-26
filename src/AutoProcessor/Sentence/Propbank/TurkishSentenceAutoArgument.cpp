@@ -17,25 +17,25 @@ bool TurkishSentenceAutoArgument::autoArgument(AnnotatedSentence* sentence) {
     string predicateId;
     for (int i = 0; i < sentence->wordCount(); i++){
         AnnotatedWord* word = (AnnotatedWord*) sentence->getWord(i);
-        if (word->getArgument() != nullptr && word->getArgument()->getArgumentType() == "PREDICATE"){
-            predicateId = word->getArgument()->getId();
+        if (word->getArgumentList() != nullptr && word->getArgumentList()->containsPredicate()){
+            predicateId = word->getSemantic();
             break;
         }
     }
     if (!predicateId.empty()){
         for (int i = 0; i < sentence->wordCount(); i++){
             AnnotatedWord* word = (AnnotatedWord*) sentence->getWord(i);
-            if (word->getArgument() == nullptr){
+            if (word->getArgumentList() == nullptr){
                 if (word->getShallowParse() == "ÖZNE"){
                     if (word->getParse() != nullptr && word->getParse()->containsTag(MorphologicalTag::PASSIVE)){
-                        word->setArgument("ARG1$" + predicateId);
+                        word->setArgumentList("ARG1$" + predicateId);
                     } else {
-                        word->setArgument("ARG0$" + predicateId);
+                        word->setArgumentList("ARG0$" + predicateId);
                     }
                     modified = true;
                 } else {
                     if (word->getShallowParse() == "NESNE"){
-                        word->setArgument("ARG1$" + predicateId);
+                        word->setArgumentList("ARG1$" + predicateId);
                         modified = true;
                     }
                 }

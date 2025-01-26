@@ -22,7 +22,7 @@ TurkishSentenceAutoFramePredicate::TurkishSentenceAutoFramePredicate(FrameNet &f
 bool TurkishSentenceAutoFramePredicate::autoPredicate(AnnotatedSentence *sentence) {
     vector<AnnotatedWord*> candidateList = sentence->predicateFrameCandidates(frameNet);
     for (AnnotatedWord* word : candidateList){
-        word->setArgument("PREDICATE$NONE$" + word->getSemantic());
+        word->setFrameElementList("PREDICATE$NONE$" + word->getSemantic());
     }
     if (!candidateList.empty()){
         return true;
