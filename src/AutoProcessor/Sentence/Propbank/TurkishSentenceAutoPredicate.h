@@ -10,7 +10,7 @@ class TurkishSentenceAutoPredicate : public SentenceAutoPredicate {
 private:
     FramesetList xmlParser;
 public:
-    explicit TurkishSentenceAutoPredicate(FramesetList& xmlParser);
+    explicit TurkishSentenceAutoPredicate(const FramesetList& xmlParser);
     bool autoPredicate(AnnotatedSentence* sentence) override;
 };
 

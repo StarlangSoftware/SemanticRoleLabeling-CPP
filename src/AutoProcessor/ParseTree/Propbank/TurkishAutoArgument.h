@@ -12,8 +12,8 @@ class TurkishAutoArgument : public AutoArgument{
 public:
     TurkishAutoArgument();
 private:
-    bool checkAncestors(ParseNode* parseNode, const string& name);
-    bool checkAncestorsUntil(ParseNode* parseNode, const string& suffix);
+    bool checkAncestors(const ParseNode* parseNode, const string& name);
+    bool checkAncestorsUntil(const ParseNode* parseNode, const string& suffix);
 protected:
     bool autoDetectArgument(ParseNodeDrawable* parseNode, ArgumentType argumentType);
 };

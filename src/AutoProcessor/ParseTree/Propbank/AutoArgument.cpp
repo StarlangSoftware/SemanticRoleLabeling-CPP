@@ -18,7 +18,7 @@ AutoArgument::AutoArgument(ViewLayerType secondLanguage) {
  * @param parseTree Parse tree for semantic role labeling
  * @param frameset Frame net used in labeling.
  */
-void AutoArgument::autoArgument(ParseTreeDrawable* parseTree, Frameset frameset) {
+void AutoArgument::autoArgument(const ParseTreeDrawable* parseTree, const Frameset &frameset) {
     ArgumentType values[] = {ArgumentType::NONE, ArgumentType::PREDICATE, ArgumentType::ARG0, ArgumentType::ARG1, ArgumentType::ARG2, ArgumentType::ARG3, ArgumentType::ARG4, ArgumentType::ARG5, ArgumentType::ARGMNONE, ArgumentType::ARGMEXT, ArgumentType::ARGMLOC, ArgumentType::ARGMDIS, ArgumentType::ARGMADV, ArgumentType::ARGMCAU, ArgumentType::ARGMTMP, ArgumentType::ARGMPNC, ArgumentType::ARGMMNR, ArgumentType::ARGMDIR};
     NodeDrawableCollector nodeDrawableCollector = NodeDrawableCollector((ParseNodeDrawable*) parseTree->getRoot(), new IsTransferable(secondLanguage));
     vector<ParseNodeDrawable*> leafList = nodeDrawableCollector.collect();

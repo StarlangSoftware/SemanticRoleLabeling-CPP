@@ -17,7 +17,7 @@ TurkishAutoArgument::TurkishAutoArgument() : AutoArgument(ViewLayerType::TURKISH
  * @param name Tag to check.
  * @return The ancestor of the given parse node with the given tag, if such ancestor does not exist, returns null.
  */
-bool TurkishAutoArgument::checkAncestors(ParseNode* parseNode, const string &name) {
+bool TurkishAutoArgument::checkAncestors(const ParseNode* parseNode, const string &name) {
     while (parseNode != nullptr){
         if (parseNode->getData().getName() == name){
             return true;
@@ -35,7 +35,7 @@ bool TurkishAutoArgument::checkAncestors(ParseNode* parseNode, const string &nam
  * @return The ancestor of the given parse node with the tag having the given suffix, if such ancestor does not
  * exist, returns null.
  */
-bool TurkishAutoArgument::checkAncestorsUntil(ParseNode* parseNode, const string &suffix) {
+bool TurkishAutoArgument::checkAncestorsUntil(const ParseNode* parseNode, const string &suffix) {
     while (parseNode != nullptr){
         if (parseNode->getData().getName().find("-" + suffix) != string::npos){
             return true;

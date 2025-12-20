@@ -11,7 +11,7 @@ class TurkishSentenceAutoFramePredicate : public SentenceAutoFramePredicate {
 private:
     FrameNet frameNet;
 public:
-    explicit TurkishSentenceAutoFramePredicate(FrameNet& frameNet);
+    explicit TurkishSentenceAutoFramePredicate(const FrameNet& frameNet);
     bool autoPredicate(AnnotatedSentence* sentence) override;
 };
 

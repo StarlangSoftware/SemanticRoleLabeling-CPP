@@ -16,7 +16,7 @@ bool TurkishSentenceAutoArgument::autoArgument(AnnotatedSentence* sentence) {
     bool modified = false;
     string predicateId;
     for (int i = 0; i < sentence->wordCount(); i++){
-        AnnotatedWord* word = (AnnotatedWord*) sentence->getWord(i);
+        auto word = (AnnotatedWord*) sentence->getWord(i);
         if (word->getArgumentList() != nullptr && word->getArgumentList()->containsPredicate()){
             predicateId = word->getSemantic();
             break;
@@ -24,7 +24,7 @@ bool TurkishSentenceAutoArgument::autoArgument(AnnotatedSentence* sentence) {
     }
     if (!predicateId.empty()){
         for (int i = 0; i < sentence->wordCount(); i++){
-            AnnotatedWord* word = (AnnotatedWord*) sentence->getWord(i);
+            auto word = (AnnotatedWord*) sentence->getWord(i);
             if (word->getArgumentList() == nullptr){
                 if (word->getShallowParse() == "ÖZNE"){
                     if (word->getParse() != nullptr && word->getParse()->containsTag(MorphologicalTag::PASSIVE)){

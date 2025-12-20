@@ -7,9 +7,9 @@
 /**
  * Constructor for TurkishSentenceAutoPredicate. Gets the FrameSets as input from the user, and sets
  * the corresponding attribute.
- * @param framesetList FramesetList containing the Turkish propbank frames.
+ * @param xmlParser FramesetList containing the Turkish propbank frames.
  */
-TurkishSentenceAutoPredicate::TurkishSentenceAutoPredicate(FramesetList &xmlParser) {
+TurkishSentenceAutoPredicate::TurkishSentenceAutoPredicate(const FramesetList &xmlParser) {
     this->xmlParser = xmlParser;
 }
 

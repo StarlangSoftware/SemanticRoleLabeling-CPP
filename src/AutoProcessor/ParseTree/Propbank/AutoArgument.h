@@ -18,7 +18,7 @@ protected:
     virtual bool autoDetectArgument(ParseNodeDrawable* parseNode, ArgumentType argumentType) = 0;
     explicit AutoArgument(ViewLayerType secondLanguage);
 public:
-    void autoArgument(ParseTreeDrawable* parseTree, Frameset frameset);
+    void autoArgument(const ParseTreeDrawable* parseTree, const Frameset &frameset);
 };
 
 
